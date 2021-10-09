@@ -1,0 +1,26 @@
+{% load static %} <!--Carrega arquivos estáticos no projeto-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel='stylesheet' href="{% static 'css/app.css' %}">
+
+    <title>Marketplace da Comunidade</title>
+</head>
+<body>
+    {% include 'snippets/barra_navegacao.html' %}
+    {% block conteudo %}
+    {% endblock conteudo %}
+    {% include 'snippets/rodape.html' %}
+    <!-- jQuery Propper.js e Bootstrap JS-->
+    <script src="{% static 'js/jquery.min.js'%}"> </script>
+
+    <script src="{% static 'js/propper.min.js'%}"></script><!--Biblioteca usada para fornecer interatividade entre alguns componentes do Bootstrap, como menus drop-down-->
+
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    
+</body>
+</html>

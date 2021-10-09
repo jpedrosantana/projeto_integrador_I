@@ -6,8 +6,8 @@ from django.views.generic.edit import FormView
 
 def listar_empreendimentos(request):
     lista_empreendimentos = Empreendimento.objects.all()
-    empreendimento = get_object_or_404(Empreendimento)
-    contexto = {'empreendimento': empreendimento,
+    #empreendimento = get_object_or_404(Empreendimento)
+    contexto = {#'empreendimento': empreendimento,
                 'lista_empreendimentos': lista_empreendimentos}
     return render(request, 'empreendimentos/listar.html', contexto)
 

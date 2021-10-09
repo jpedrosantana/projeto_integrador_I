@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo %}
+Produtos/Serviços
+{%endblock%}
+{%block conteudo%}
+<div class='container-fluid'>
+    <div class='row' style='margin-top: 6%'>
+        <div class='col-sm-8 loja-colecao'>
+            <div class='loja-item'>
+                <div class='row'>
+                    {%for empreendimento in lista_empreendimentos%}
+                    <div class='col-md-4'>
+                        <div class='thumbnail'>
+                            <a href = "{{ empreendimento.get_absolute_url}}">
+                                <img src="
+                                        {% if empreendimento.imagem %}
+                                        {{ empreendimento.imagem.url}}
+                                        {% else %}
+                                        {% static 'img/default.jpg' %}
+                                        {% endif %}"
+                                        alt = "Imagem de {{empreendimento.nome}}"
+                                        style = 'height: 130px; width:auto'
+                                        >
+                            </a>
+                            <div class='caption'>
+                                <h3 class='text-left'>
+                                    <a href="{{empreendimento.get_absolute_url}}">
+                                        {{empreendimento.nome_empreendimento}}
+                                    </a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

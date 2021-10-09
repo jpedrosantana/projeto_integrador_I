@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 # Criação da(s) tabela(s)
@@ -17,3 +18,6 @@ class Empreendimento(models.Model):
 
     def __str__(self):
         return self.nome_empreendimento
+
+    def get_absolute_url(self):
+        return reverse('main:detalhes_empreendimento', args=[self.cadastro])

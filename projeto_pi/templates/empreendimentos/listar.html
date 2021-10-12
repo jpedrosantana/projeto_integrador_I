@@ -6,11 +6,10 @@ Produtos/Serviços
 {%block conteudo%}
 <div class='container-fluid'>
     <div class='row' style='margin-top: 6%'>
-        <div class='col-sm-8 loja-colecao'>
-            <div class='loja-item'>
+        <div class='col-sm-12'>
                 <div class='row'>
                     {%for empreendimento in lista_empreendimentos%}
-                    <div class='col-md-4'>
+                    <div class='col-md-3'>
                         <div class='thumbnail'>
                             <a href = "{{ empreendimento.get_absolute_url}}">
                                 <img src="
@@ -34,7 +33,6 @@ Produtos/Serviços
                     </div>
                     {% endfor %}
                 </div>
-            </div>
         </div>
     </div>
 </div>

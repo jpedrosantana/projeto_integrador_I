@@ -6,12 +6,12 @@ from django.urls import reverse
 class Empreendimento(models.Model):
     cadastro = models.AutoField(primary_key=True)
     nome_empreendedor = models.CharField(max_length=20)
-    nome_empreendimento = models.CharField(max_length=30)
+    nome_empreendimento = models.CharField(max_length=50)
     telefone = models.CharField(max_length=11, blank=True)
-    instagram = models.CharField(max_length=30, blank=True)
-    facebook = models.CharField(max_length=30, blank=True)
+    instagram = models.CharField(max_length=50, blank=True)
+    facebook = models.CharField(max_length=50, blank=True)
     descricao = models.TextField(max_length=200)
-    imagem = models.ImageField(upload_to='imagens')
+    imagem = models.ImageField(upload_to='imagens', blank=True)
 
     class Meta:
         ordering=('nome_empreendimento',) #faz o ordenamento por empreendimento

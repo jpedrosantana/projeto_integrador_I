@@ -3,12 +3,14 @@
 <h2>Anuncie aqui</h2>
 <p>Preencha os campos do formulário para anunciar seu produto ou serviço em nosso site.</p>
 
-<!--
+
 <form method='POST'>
     {%csrf_token%}
-    {{form}}
+    <table>
+        {{form.as_table}}
+        </table>
     <button type='submit' class='btn btn-primary'>Enviar</button>
 </form>
--->
+
 
 {% endblock conteudo %}

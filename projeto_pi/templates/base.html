@@ -9,12 +9,18 @@
     <link rel='stylesheet' href="{% static 'css/app.css' %}">
 
     <title>Marketplace da Comunidade</title>
+
+    <style>
+        body{
+            padding-bottom: 40px;
+        }
+    </style>
 </head>
 <body>
-    {% include 'snippets/barra_navegacao.html' %}
-    {% block conteudo %}
-    {% endblock conteudo %}
-    {% include 'snippets/rodape.html' %}
+        {% include 'snippets/barra_navegacao.html' %}
+        {% block conteudo %}
+        {% endblock conteudo %}
+        {% include 'snippets/rodape.html' %}
     <!-- jQuery Propper.js e Bootstrap JS-->
     <script src="{% static 'js/jquery.min.js'%}"> </script>
 

@@ -1,9 +1,12 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
-from .forms import EmpreendimentoForm
+from .forms import EmpreendimentoForm, NewUserForm
 from .models import Empreendimento
 from django.views.generic.edit import FormView
 from django.http import HttpResponseRedirect
+
+from django.contrib.auth import login
+from django.contrib import messages
 
 # Create your views here.
 
@@ -34,3 +37,17 @@ def anuncie(request):
         form = EmpreendimentoForm()
 
     return render(request, 'anuncie.html', {'form': form})
+
+#view para o cadastro de usuário
+def register_request(request):
+	if request.method == "POST": #Valida se o método é post
+		form = NewUserForm(request.POST)
+		if form.is_valid():
+            #salva o usuário e faz login com ele
+			user = form.save()
+			login(request, user)
+			messages.success(request, "Registration successful." )
+			return redirect("main:index")
+		messages.error(request, "Unsuccessful registration. Invalid information.")
+	form = NewUserForm()
+	return render (request=request, template_name="register.html", context={"register_form":form})

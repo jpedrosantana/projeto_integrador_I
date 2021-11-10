@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -167,3 +168,5 @@ LOGGING={
         },
     },
 }
+
+LOGIN_REDIRECT_URL = '/'

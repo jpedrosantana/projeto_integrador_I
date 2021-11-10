@@ -4,32 +4,43 @@
 
 {% load crispy_forms_tags %}
 
-  {% if form.errors %}
-    <p>Usuário ou senha incorretos. Tente novamente.</p>
-  {% endif %}
+<section class='vh-100' style='background-color: #abc0e7;'>
+  <div class='container py-5 h-100'  >
+    <div class='row d-flex justify-content-center align-items-center h-100'>
+      <div class='card shadow-2-strong' style='border-radius: 1rem;'>
+        <div class='card-body p-5 text-center'>
 
-  {% if next %}
-    {% if user.is_authenticated %}
-      <p>Sua conta não tem acesso a essa página, para prosseguir faça login.</p>
-    {% else %}
-      <p>Faça login para acessar a pagina.</p>
-    {% endif %}
-  {% endif %}
+          {% if form.errors %}
+          <h4 style='color: red;'>Usuário ou senha incorretos. Tente novamente.</h2>
+          {% endif %}
+        
+          {% if next %}
+            {% if user.is_authenticated %}
+              <p>Sua conta não tem acesso a essa página, para prosseguir faça login.</p>
+            {% else %}
+              <h3 class='mb-5'>Faça login para acessar a pagina.</h3>
+            {% endif %}
+          {% endif %}
+        
+          <form class='form' method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+              <div class = "form-group md-6">
+                {{form.username|as_crispy_field}}
+              </div>
+              <div class = "form-group md-6">
+                {{form.password|as_crispy_field}}
+              </div>
+            
+            <input type="submit" class='btn btn-info btn-md' value="Login" />
+            <input type="hidden" name="next" value="{{ next }}" />
+          </form>
+          <br>
+          <p class="text-left text-center">Não é cadastrado? Clique <a href="/register/">aqui</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <form method="post" action="{% url 'login' %}">
-    {% csrf_token %}
-    <table>
-      <tr>
-        <!--<td>{{ form.username.label_tag }}</td>-->
-        <td>{{ form.username|as_crispy_field }}</td>
-      </tr>
-      <tr>
-        <!--<td>{{ form.password.label_tag }}</td>-->
-        <td>{{ form.password|as_crispy_field }}</td>
-      </tr>
-    </table>
-    <input type="submit" value="Login" />
-    <input type="hidden" name="next" value="{{ next }}" />
-  </form>
 
 {% endblock conteudo %}

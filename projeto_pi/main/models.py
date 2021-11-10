@@ -17,6 +17,7 @@ class Empreendimento(models.Model):
     imagem = models.ImageField(upload_to='imagens', blank=True)
     nome_usuario = models.ForeignKey(User, on_delete=SET_NULL, null=True, blank=True)
     #Falta acrescentar os outros campos de imagem e o relacionamento das tabelas categoria e condição pgto.
+    #Colocar os campos também no admin.py para edição no django admin
 
     class Meta:
         ordering=('nome_empreendimento',) #faz o ordenamento por empreendimento
@@ -30,12 +31,18 @@ class Empreendimento(models.Model):
 class Condicao_Pagamento(models.Model):
     nome = models.CharField(max_length=30)
 
+    class Meta:
+        ordering=('nome')
+
     def __str__(self):
         """String representing the object"""
         return self.nome
 
 class Categoria(models.Model):
     nome = models.CharField(max_length=30)
+
+    class Meta:
+        ordering=('nome')
 
     def __str__(self):
         """String representing the object"""

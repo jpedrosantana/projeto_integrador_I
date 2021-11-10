@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Empreendimento
+from .models import Condicao_Pagamento, Empreendimento, Categoria
 
 # Register your models here.
 @admin.register(Empreendimento)
@@ -15,12 +15,10 @@ class EmpreendimentoAdmin(admin.ModelAdmin):
 
     #prepopulated_fields =  #Campos preenchidos automaticamente
 
-"""
-   list_editable=['nome_empreendedor', 
-                    'nome_empreendimento', 
-                    'telefone',  
-                    'instagram',  
-                    'facebook', 
-                    'descricao', 
-                    'imagem'] #Campos que podem ser editados
-"""
+@admin.register(Condicao_Pagamento)
+class Condicao_PagamentoAdmin(admin.ModelAdmin):
+    model = Condicao_Pagamento
+    
+@admin.register(Categoria)
+class CategoriaAdmin(admin.ModelAdmin):
+    model = Categoria

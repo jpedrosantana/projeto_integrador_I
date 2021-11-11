@@ -32,7 +32,7 @@ class Condicao_Pagamento(models.Model):
     nome = models.CharField(max_length=30)
 
     class Meta:
-        ordering=('nome')
+        ordering=('nome',)
 
     def __str__(self):
         """String representing the object"""
@@ -42,7 +42,7 @@ class Categoria(models.Model):
     nome = models.CharField(max_length=30)
 
     class Meta:
-        ordering=('nome')
+        ordering=('nome',)
 
     def __str__(self):
         """String representing the object"""

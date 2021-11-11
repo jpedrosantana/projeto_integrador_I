@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 
 from .forms import EmpreendimentoForm, NewUserForm
-from .models import Empreendimento
+from .models import Empreendimento,  Categoria, Condicao_Pagamento
 from django.views.generic.edit import FormView
 from django.http import HttpResponseRedirect
 
@@ -10,9 +10,19 @@ from django.contrib import messages
 
 # Create your views here.
 
-def listar_empreendimentos(request):
+def listar_empreendimentos(request, categoria=None):
+    #categoria = None
     lista_empreendimentos = Empreendimento.objects.all()
-    contexto = {'lista_empreendimentos': lista_empreendimentos}
+    lista_categorias = Categoria.objects.all()
+
+    #if categoria:
+    #    categoria = get_object_or_404(Categoria, nome=categoria)
+    #    lista_empreendimentos = Empreendimento.objects.filter(categoria=categoria)
+    
+
+    contexto = {'lista_empreendimentos': lista_empreendimentos,
+                #'lista_categorias': lista_categorias,
+                }
     return render(request, 'empreendimentos/listar.html', contexto)
 
 def detalhes_empreendimento(request, cadastro):

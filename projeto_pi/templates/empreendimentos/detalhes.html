@@ -8,6 +8,10 @@ Detalhes do Serviço
     <div class='row' style='margin-top: 6%'>
         <div class='col-sm-8'>
                 <div class='row'>
+                    <div class='col-md-6'>
+                        <img src='{{empreendimento.imagem.url}}' class="img-fluid img-thumbnail mb-4" >
+                        <img src='{{empreendimento.imagem.url}}' class="img-fluid img-thumbnail">
+                    </div>    
                     <div class='card col-md-6'>
                         <div class='card-body'>
                             <!--<div class='col-md-12'>-->
@@ -16,12 +20,13 @@ Detalhes do Serviço
                                         {% else %}
                                         {% static "img/default.jpg"%}
                                         {% endif %}'
-                                    alt='Imagem de {{empreendimento.nome_empreendimento}}'
-                                    style='height: 170px; width: 300px'>
+                                    class = 'img-fluid'
+                                    alt='Imagem de {{empreendimento.nome_empreendimento}}'>
                             <!--</div>
                             <div class='col-md-6' style='padding-left: 20px'>-->
                                 <h3>{{empreendimento.nome_empreendimento}}</h3>
                                 <p>{{ empreendimento.descricao|safe|linebreaksbr }}</p> <!--tags precedidas por | são filtro de template-->
+                                <!--
                                 <p>{% if empreendimento.telefone %} 
                                     Telefone: {{empreendimento.telefone}} 
                                     {% endif %}</p>
@@ -31,6 +36,22 @@ Detalhes do Serviço
                                 <p>{% if empreendimento.facebook %} 
                                     Facebook: {{empreendimento.facebook}} 
                                     {% endif %}</p>
+                                -->
+
+                                {% if empreendimento.telefone %}
+                                <p><ion-icon name="call-outline"></ion-icon>
+                                {{empreendimento.telefone}}</p>
+                                {%endif%}
+                                
+                                {% if empreendimento.instagram %}
+                                <p><ion-icon name="logo-instagram"></ion-icon>
+                                {{empreendimento.instagram}}</p>
+                                {%endif%}
+
+                                {% if empreendimento.facebook %}
+                                <p><ion-icon name="logo-facebook"></ion-icon>
+                                {{empreendimento.facebook}}</p>
+                                {%endif%}
                             <!--</div>-->
                         </div>
                     </div>

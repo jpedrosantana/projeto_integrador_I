@@ -21,7 +21,7 @@ def listar_empreendimentos(request, categoria=None):
     
 
     contexto = {'lista_empreendimentos': lista_empreendimentos,
-                #'lista_categorias': lista_categorias,
+                'lista_categorias': lista_categorias,
                 }
     return render(request, 'empreendimentos/listar.html', contexto)
 

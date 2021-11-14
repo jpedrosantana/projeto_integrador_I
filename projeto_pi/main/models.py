@@ -47,3 +47,6 @@ class Categoria(models.Model):
     def __str__(self):
         """String representing the object"""
         return self.nome
+
+    def get_absolute_url(self):
+        return reverse('main:listar_empreendimento_categoria', args=[self.nome])

@@ -2,8 +2,11 @@
 <!--Documentação cores de fundo e texto=> https://getbootstrap.com/docs/4.3/utilities/colors/-->
 <nav class='navbar navbar-expand-lg navbar-light bg-primary'>
 
-    <a class='navbar-brand text-light' href="/">
+    <!--<a class='navbar-brand text-light' href="/">
         Marketplace da Comunidade
+    </a>-->
+    <a class='navbar-brand' href='#'>
+        <img src='/static/img/e-vizinhos.JPG' width="150" height="50">
     </a>
 
     <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent'>
@@ -17,6 +20,7 @@
                     Página Principal
                 </a>
             </li>
+            <!--
             <li class='nav-item dropdown'>
                 <a class="nav-link text-light" id=navbarDropdownMenuItem href="#" data-toggle="dropdown">Anúncios</a>
                 <ul class='dropdown-menu' aria-labelledby="navbarDropdownMenuItem">
@@ -26,6 +30,12 @@
                         </a>
                     </li>
                 </ul>
+            </li>
+            -->
+            <li class='nav-item'>
+                <a class='nav-link text-light' href='/empreendimentos'>
+                    Anúncios
+                </a>
             </li>
             {% if user.is_authenticated %}
             <li class='nav-item'>

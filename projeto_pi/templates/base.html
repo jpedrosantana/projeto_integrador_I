@@ -44,6 +44,54 @@
         .btn{
             margin-right: 10px;
         }
+
+        .sidebar-module{
+            margin: -1% 0px 0px -15px;
+            padding: 0;
+            width: 200px;
+            background-color: #f1f1f1;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+        }
+
+        .sidebar-module a, h4{
+            display: block;
+            color: black;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .sidebar-module li.active a{
+            background-color:darkcyan;
+            color: white;
+        }
+
+        .sidebar-module li:hover:not(.active) a{
+            background-color: #555;
+            color: white;
+        }
+
+        /*deixa o sidebar como topbar*/
+        @media screen and (max-width: 700px){
+            .sidebar-module{
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .sidebar-module a{float: left;}
+            #content-page{margin-left: 0; margin-top: 1%;}
+        }
+
+        /*mostra horizontalmente ao invés de verticalmente*/
+        @media screen and (max-width: 400px){
+            .sidebar-module a, h4{
+                text-align: center;
+                float: none;
+            }
+        }
+
+
     </style>
 </head>
 <body>

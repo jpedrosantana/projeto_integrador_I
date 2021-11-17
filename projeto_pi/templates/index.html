@@ -1,6 +1,19 @@
 {% extends "base.html"%}
 {% block conteudo %}
-<h2>Início</h2>
-<p>Você está na página principal. <br> 
-    Clique <a href='/empreendimentos'>aqui</a> para conferir os anúncios.
+<div class='container'>
+    <div class='row' style="margin-top: 3%;">
+        <div class="col-md-6">
+            <h2 class='text-justify'>Bem vindo ao E-Vizinhos</h2>
+            <h3 class='text-justify'>Somos um portal de serviços perto de você!
+            Clique <a href='/empreendimentos'>aqui</a> para conferir nossos anúncios.</h3>
+            <img src="/static/img/home/home-atendimento.jpg" class='img-fluid rounded mb-3'>
+            <img src='/static/img/home/home-estetica.jpg' class='img-fluid rounded mb-3'>
+        </div>
+        <div class='col-md-6'>
+            <img src="/static/img/home/home-cabelereiro.jpg" class=' img-fluid rounded mb-3'>
+            <img src="/static/img/home/home-padaria.jpg" class=' img-fluid rounded mb-3'>
+        </div>
+    </div>
+</div>
+
 {%endblock conteudo%}

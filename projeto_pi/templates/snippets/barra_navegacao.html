@@ -5,8 +5,8 @@
     <!--<a class='navbar-brand text-light' href="/">
         Marketplace da Comunidade
     </a>-->
-    <a class='navbar-brand' href='#'>
-        <img src='/static/img/e-vizinhos.JPG' width="150" height="50">
+    <a class='navbar-brand' href='/'>
+        <img src='/static/img/Arte PI2.png' width="auto" height="50">
     </a>
 
     <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent'>
@@ -15,8 +15,8 @@
 
     <div class='collapse navbar-collapse' id='navbarSupportedContent'>
         <ul class='navbar-nav mr-auto'>
-            <li class='nav-item'>
-                <a class='nav-link text-light' href='/'>
+            <li class='nav-item px-1'>
+                <a class='nav-link text-light font-weight-bold' href='/'>
                     Página Principal
                 </a>
             </li>
@@ -32,20 +32,20 @@
                 </ul>
             </li>
             -->
-            <li class='nav-item'>
-                <a class='nav-link text-light' href='/empreendimentos'>
+            <li class='nav-item px-1 h-50'>
+                <a class='nav-link text-light font-weight-bold' href='/empreendimentos'>
                     Anúncios
                 </a>
             </li>
             {% if user.is_authenticated %}
-            <li class='nav-item'>
-                <a class='nav-link text-light' href='/anuncie'>
+            <li class='nav-item px-1 h-75'>
+                <a class='nav-link text-light font-weight-bold' href='/anuncie'>
                     Anuncie aqui
                 </a>
             </li>
             {% endif %}
-            <li class='nav-item'>
-                <a class='nav-link text-light' href='/ajuda'>
+            <li class='nav-item px-1'>
+                <a class='nav-link text-light font-weight-bold' href='/ajuda'>
                     Ajuda
                 </a>
             </li>
@@ -58,7 +58,7 @@
             <a class='btn btn-rounded btn-success' role='button' href='{% url "login"%}?next={{request.path}}'>
                 Entrar
             </a>
-            <a class='btn btn-rounded btn-warning ' role='button' href='/register'>
+            <a class='btn btn-rounded btn-warning' role='button' href='/register'>
                 Cadastre-se
             </a>
             

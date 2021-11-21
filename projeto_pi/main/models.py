@@ -15,7 +15,11 @@ class Empreendimento(models.Model):
     facebook = models.CharField(max_length=50, blank=True)
     descricao = models.TextField(max_length=200)
     imagem = models.ImageField(upload_to='imagens', blank=True)
+    imagem2 = models.ImageField(upload_to='imagens', blank=True)
+    imagem3 = models.ImageField(upload_to='imagens', blank=True)
     nome_usuario = models.ForeignKey(User, on_delete=SET_NULL, null=True, blank=True)
+    condicao_pagamento = models.ManyToManyField('Condicao_Pagamento')
+    categoria = models.ManyToManyField('Categoria')
     #Falta acrescentar os outros campos de imagem e o relacionamento das tabelas categoria e condição pgto.
     #Colocar os campos também no admin.py para edição no django admin
 

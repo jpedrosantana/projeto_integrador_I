@@ -4,11 +4,12 @@
 <p>Preencha os campos do formulário para anunciar seu produto ou serviço em nosso site.</p>
 
 
-<form method='POST'>
+<form enctype="multipart/form-data" method='POST'>
     {%csrf_token%}
     <table>
+        {% include 'messages.html' %}
         {{form.as_table}}
-        </table>
+    </table>
     <button type='submit' class='btn btn-primary'>Enviar</button>
 </form>
 

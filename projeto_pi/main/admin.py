@@ -9,7 +9,12 @@ class EmpreendimentoAdmin(admin.ModelAdmin):
                     'nome_empreendimento', 
                     'telefone',  
                     'instagram',  
-                    'facebook',] #Campos visíveis na tela
+                    'facebook',
+                    'descricao',
+                    'imagem',
+                    'imagem2',
+                    'imagem3',
+                    ] #Campos visíveis na tela,
 
     list_filter = ['nome_empreendimento', 'instagram', 'facebook'] #Campos que são usados como filtro de dados
 

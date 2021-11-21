@@ -1,3 +1,4 @@
+from django import http
 from django.shortcuts import render, get_object_or_404, redirect
 
 from .forms import EmpreendimentoForm, NewUserForm
@@ -32,21 +33,23 @@ def detalhes_empreendimento(request, cadastro):
 
 def anuncie(request):
     # if this is a POST request we need to process the form data
+    form = EmpreendimentoForm()
+
     if request.method == 'POST':
+        #print(request.POST)
         # create a form instance and populate it with data from the request:
-        form = EmpreendimentoForm(request.POST)
+        form = EmpreendimentoForm(request.POST, request.FILES)
         # check whether it's valid:
         if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponseRedirect('/thanks/')
+            form.save()
+            
+            messages.success(request, 'Anúncio incluído com sucesso!' )
 
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = EmpreendimentoForm()
+            return http.HttpResponseRedirect('/anuncie')
+            
+    contexto = {'form': form}
 
-    return render(request, 'anuncie.html', {'form': form})
+    return render(request, 'anuncie.html', contexto)
 
 #view para o cadastro de usuário
 def register_request(request):

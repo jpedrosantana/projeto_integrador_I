@@ -12,17 +12,17 @@ from django.contrib import messages
 # Create your views here.
 
 def listar_empreendimentos(request, categoria=None):
-    #categoria = None
     lista_empreendimentos = Empreendimento.objects.all()
     lista_categorias = Categoria.objects.all()
 
-    #if categoria:
-    #    categoria = get_object_or_404(Categoria, nome=categoria)
-    #    lista_empreendimentos = Empreendimento.objects.filter(categoria=categoria)
+    if categoria:
+        categoria = get_object_or_404(Categoria, nome=categoria)
+        lista_empreendimentos = Empreendimento.objects.filter(categoria=categoria)
     
 
     contexto = {'lista_empreendimentos': lista_empreendimentos,
                 'lista_categorias': lista_categorias,
+                'categoria': categoria,
                 }
     return render(request, 'empreendimentos/listar.html', contexto)
 
@@ -45,7 +45,7 @@ def anuncie(request):
             
             messages.success(request, 'Anúncio incluído com sucesso!' )
 
-            return http.HttpResponseRedirect('/anuncie')
+            return http.HttpResponseRedirect('/empreendimento')
             
     contexto = {'form': form}
 

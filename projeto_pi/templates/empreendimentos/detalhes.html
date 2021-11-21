@@ -6,13 +6,9 @@ Detalhes do Serviço
 {%block conteudo%}
 <div class='container'>
     <div class='row' style='margin-top: 4%'>
-        <div class='col-sm-8'>
+        <div class='col-lg-10'>
                 <div class='row'>
-                    <div class='col-md-6'>
-                        <img src='{{empreendimento.imagem.url}}' class="img-fluid img-thumbnail mb-4" >
-                        <img src='{{empreendimento.imagem.url}}' class="img-fluid img-thumbnail">
-                    </div>    
-                    <div class='card col-md-6'>
+                    <div class='card col-8'>
                         <div class='card-body'>
                             <!--<div class='col-md-12'>-->
                                 <img src='{% if empreendimento.imagem %}
@@ -26,17 +22,6 @@ Detalhes do Serviço
                             <div class='col-md-6' style='padding-left: 20px'>-->
                                 <h3>{{empreendimento.nome_empreendimento}}</h3>
                                 <p>{{ empreendimento.descricao|safe|linebreaksbr }}</p> <!--tags precedidas por | são filtro de template-->
-                                <!--
-                                <p>{% if empreendimento.telefone %} 
-                                    Telefone: {{empreendimento.telefone}} 
-                                    {% endif %}</p>
-                                <p>{% if empreendimento.instagram %} 
-                                    Instagram: {{empreendimento.instagram}} 
-                                    {% endif %}</p>
-                                <p>{% if empreendimento.facebook %} 
-                                    Facebook: {{empreendimento.facebook}} 
-                                    {% endif %}</p>
-                                -->
 
                                 {% if empreendimento.telefone %}
                                 <p><ion-icon name="call-outline"></ion-icon>
@@ -52,9 +37,17 @@ Detalhes do Serviço
                                 <p><ion-icon name="logo-facebook"></ion-icon>
                                 {{empreendimento.facebook}}</p>
                                 {%endif%}
-                            <!--</div>-->
+
+                                {% for pagamento in empreendimento.condicao_pagamento.all%}
+                                    {{pagamento}}{% if not forloop.last %}, {% endif %}
+                                {%endfor%}
+
                         </div>
                     </div>
+                    <div class='col-4'>
+                        <img src='{{empreendimento.imagem2.url}}' class="img-fluid img-thumbnail mb-4" >
+                        <img src='{{empreendimento.imagem3.url}}' class="img-fluid img-thumbnail">
+                    </div>   
                 </div>
         </div>
     </div>

@@ -14,7 +14,7 @@ Produtos/Serviços
                         <a href="{%url 'main:listar_empreendimentos'%}">Todos</a>
                     </li>
                     {%for c in lista_categorias%}
-                    <li {% if categoria.nome%} 
+                    <li {% if categoria.nome == c.nome %} 
                         class='active' 
                         {%endif%}> <!--Colocar a condição categoria.nome == empreendimento.nome-->
                         <a href="{{c.get_absolute_url}}">{{c.nome}}</a>
@@ -36,7 +36,7 @@ Produtos/Serviços
                                         {% static 'img/default.jpg' %}
                                         {% endif %}"
                                         alt = "Imagem de {{empreendimento.nome}}"
-                                        style = 'height: 130px; width:auto'
+                                        style = 'height: 130px; width: 230px'
                                         >
                             </a>
                             <div class='caption'>

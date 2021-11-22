@@ -45,8 +45,13 @@ Detalhes do Serviço
                         </div>
                     </div>
                     <div class='col-4'>
+                        {%if empreendimento.imagem2 %}
                         <img src='{{empreendimento.imagem2.url}}' class="img-fluid img-thumbnail mb-4" >
+                        {% endif %}
+                        
+                        {%if empreendimento.imagem3 %}
                         <img src='{{empreendimento.imagem3.url}}' class="img-fluid img-thumbnail">
+                        {% endif %}
                     </div>   
                 </div>
         </div>

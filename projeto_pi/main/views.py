@@ -45,7 +45,7 @@ def anuncie(request):
             
             messages.success(request, 'Anúncio incluído com sucesso!' )
 
-            return http.HttpResponseRedirect('/empreendimento')
+            return http.HttpResponseRedirect('/empreendimentos')
             
     contexto = {'form': form}
 

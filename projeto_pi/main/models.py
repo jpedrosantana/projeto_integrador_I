@@ -14,7 +14,7 @@ class Empreendimento(models.Model):
     instagram = models.CharField(max_length=50, blank=True)
     facebook = models.CharField(max_length=50, blank=True)
     descricao = models.TextField(max_length=200)
-    imagem = models.ImageField(upload_to='imagens', blank=True)
+    imagem = models.ImageField(upload_to='imagens')
     imagem2 = models.ImageField(upload_to='imagens', blank=True)
     imagem3 = models.ImageField(upload_to='imagens', blank=True)
     nome_usuario = models.ForeignKey(User, on_delete=SET_NULL, null=True, blank=True)

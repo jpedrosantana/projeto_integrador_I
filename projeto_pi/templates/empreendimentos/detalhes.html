@@ -11,11 +11,7 @@ Detalhes do Serviço
                     <div class='card col-8'>
                         <div class='card-body'>
                             <!--<div class='col-md-12'>-->
-                                <img src='{% if empreendimento.imagem %}
-                                        {{empreendimento.imagem.url}}
-                                        {% else %}
-                                        {% static "img/default.jpg"%}
-                                        {% endif %}'
+                                <img src='{{empreendimento.imagem.url}}'
                                     class = 'img-fluid'
                                     alt='Imagem de {{empreendimento.nome_empreendimento}}'>
                             <!--</div>
@@ -37,10 +33,12 @@ Detalhes do Serviço
                                 <p><ion-icon name="logo-facebook"></ion-icon>
                                 {{empreendimento.facebook}}</p>
                                 {%endif%}
-
+                                
+                                <p>Aceitamos: 
                                 {% for pagamento in empreendimento.condicao_pagamento.all%}
                                     {{pagamento}}{% if not forloop.last %}, {% endif %}
                                 {%endfor%}
+                                </p>
 
                         </div>
                     </div>

@@ -1,17 +1,21 @@
 {% extends "base.html" %}
 {% block conteudo %}
-<h2>Anuncie aqui</h2>
-<p>Preencha os campos do formulário para anunciar seu produto ou serviço em nosso site.</p>
+
+{% load crispy_forms_tags %}         
+
+<div class='container py-5'>
+    <h2>Anuncie aqui</h2>
+    <p>Preencha os campos do formulário para anunciar seu produto ou serviço em nosso site.</p>
 
 
-<form enctype="multipart/form-data" method='POST'>
-    {%csrf_token%}
-    <table>
-        {% include 'messages.html' %}
-        {{form.as_table}}
-    </table>
-    <button type='submit' class='btn btn-primary'>Enviar</button>
-</form>
+    <form enctype="multipart/form-data" method='POST'>
+            {%csrf_token%}
+            {% include 'messages.html' %}
+            {{form|crispy}}
+
+        <button type='submit' class='btn btn-primary'>Enviar</button>
+    </form>
+</div>
 
 
 {% endblock conteudo %}

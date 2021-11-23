@@ -32,11 +32,14 @@ class EmpreendimentoForm(forms.ModelForm):
 
 #Formulario para registro de usuário
 class NewUserForm(UserCreationForm):
-	email = forms.EmailField(required=True) #campo personalizado, por padrão é preciso apenas do username e password
+	email = forms.EmailField(required=True, widget=forms.TextInput(attrs={'size': 40})) #campo personalizado, por padrão é preciso apenas do username e password
 
 	class Meta:
 		model = User
 		fields = ("username", "email", "password1", "password2")
+		widgets = {
+			'username': forms.TextInput(attrs={'size': 40}),
+		}
 
 	def save(self, commit=True):
 		user = super(NewUserForm, self).save(commit=False)

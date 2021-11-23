@@ -51,7 +51,7 @@
             </li>
         </ul>
         {% if user.is_authenticated %}
-            <a class='btn btn-danger btn-rounded' role='button' href='{% url "logout"%}?next={{request.path}}'>
+            <a class='btn btn-danger btn-rounded' role='button' href='{% url "logout"%}?next=/'>
                 Sair
             </a>
         {% else %}

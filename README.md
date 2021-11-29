@@ -15,7 +15,8 @@ Dessa forma, nossa proposta foi de criar uma solução digital focada na divulga
 O processo de desenvolvimento foi feito a partir da metodologia Design Thinking, identificando os problemas da comunidade e aplicando as melhorias conforme os feedbacks oferecidos.<br>
 O E-Vizinhos possui um sistema básico de autenticação para o comerciante cadastrar o seu produto/serviço, e a partir disso seu anúncio pode ser visto na plataforma com as principais informações de contato, descritivo, opções de pagamento e imagens demonstrativas.<br>
 O site pode ser visualizado clicando <a href='https://anuncios.pythonanywhere.com/'>aqui</a>.<br>
-As imagens utilizadas na aplicação foram retiradas do repositório público de imagens <a href='https://www.pexels.com/'>Pexels</a>.</p>
+As imagens utilizadas na aplicação foram retiradas do repositório público de imagens <a href='https://www.pexels.com/'>Pexels</a>.<br>
+O endereço do vídeo de apresentação do PI pode ser conferido <a href='https://youtu.be/3-OH-izeADY'>aqui</a>.</p>
 
 <h2>Melhorias Futuras</h2>
 <ul>

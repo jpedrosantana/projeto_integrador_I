@@ -15,6 +15,18 @@ def listar_empreendimentos(request, categoria=None):
     lista_empreendimentos = Empreendimento.objects.all()
     lista_categorias = Categoria.objects.all()
 
+    #https://about-wendrew.medium.com/realizando-buscas-em-registros-com-django-936dfe1215bb
+    busca = request.GET.get("search") #Pega a busca que veio do input
+
+    if busca:
+        #filtra o nome do empreendimento por algo que contém na busca
+        busca_empreendimento = Empreendimento.objects.filter(nome_empreendimento__icontains = busca) 
+        contexto = {'lista_empreendimentos': busca_empreendimento,
+                    'lista_categorias': lista_categorias,
+                    'categoria': categoria,}
+        #Renderiza apenas com o que está na busca
+        return render(request, 'empreendimentos/listar.html', contexto)
+
     if categoria:
         categoria = get_object_or_404(Categoria, nome=categoria)
         lista_empreendimentos = Empreendimento.objects.filter(categoria=categoria)
@@ -64,3 +76,4 @@ def register_request(request):
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewUserForm()
 	return render (request=request, template_name="register.html", context={"register_form":form})
+

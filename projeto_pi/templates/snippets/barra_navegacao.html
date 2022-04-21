@@ -50,6 +50,18 @@
                 </a>
             </li>
         </ul>
+        
+        <form class="d-inline my-2 my-lg-0 w-50" method='GET' action="{% url 'main:listar_empreendimentos' %}">
+            <div class='input-group'> 
+                <input class="form-control mr-sm-2" type="search" name='search' placeholder="Buscar produtos ou serviços" aria-label="Search">
+            <span class="input-group-append">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
+                    <ion-icon name="search-outline" ></ion-icon>
+                </button>
+            </span>
+            </div>
+        </form>
+        
         {% if user.is_authenticated %}
             <a class='btn btn-danger btn-rounded' role='button' href='{% url "logout"%}?next=/'>
                 Sair

@@ -8,11 +8,22 @@ Detalhes do Serviço
     <div class='row' style='margin-top: 4%'>
         <div class='col-lg-10'>
                 <div class='row'>
+                    <div class='col-sm-3'>
+                        <img src='{{empreendimento.imagem.url}}' class='img-fluid img-responsive img-thumbnail mb-4' id= 'img1'>
+
+                        {%if empreendimento.imagem2 %}
+                        <img src='{{empreendimento.imagem2.url}}' class="img-fluid img-responsive img-thumbnail mb-4" id="img2">
+                        {% endif %}
+                        
+                        {%if empreendimento.imagem3 %}
+                        <img src='{{empreendimento.imagem3.url}}' class="img-fluid img-responsive img-thumbnail" id="img3">
+                        {% endif %}
+                    </div>   
                     <div class='card col-8'>
                         <div class='card-body'>
                             <!--<div class='col-md-12'>-->
                                 <img src='{{empreendimento.imagem.url}}'
-                                    class = 'img-fluid'
+                                    class = 'img-fluid img-main-responsive mb-2' id= 'img_principal'
                                     alt='Imagem de {{empreendimento.nome_empreendimento}}'>
                             <!--</div>
                             <div class='col-md-6' style='padding-left: 20px'>-->
@@ -42,15 +53,7 @@ Detalhes do Serviço
 
                         </div>
                     </div>
-                    <div class='col-4'>
-                        {%if empreendimento.imagem2 %}
-                        <img src='{{empreendimento.imagem2.url}}' class="img-fluid img-thumbnail mb-4" >
-                        {% endif %}
-                        
-                        {%if empreendimento.imagem3 %}
-                        <img src='{{empreendimento.imagem3.url}}' class="img-fluid img-thumbnail">
-                        {% endif %}
-                    </div>   
+                    
                 </div>
         </div>
     </div>

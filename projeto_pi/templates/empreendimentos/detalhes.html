@@ -37,12 +37,12 @@ Detalhes do Serviço
                                 
                                 {% if empreendimento.instagram %}
                                 <p><ion-icon name="logo-instagram"></ion-icon>
-                                {{empreendimento.instagram}}</p>
+                                <a href="{{empreendimento.instagram}}" id="instagram" onclick="return insta_link();">{{empreendimento.instagram}}</a></p>
                                 {%endif%}
 
                                 {% if empreendimento.facebook %}
                                 <p><ion-icon name="logo-facebook"></ion-icon>
-                                {{empreendimento.facebook}}</p>
+                                <a href="https://{{empreendimento.facebook}}" id="facebook">{{empreendimento.facebook}}</a></p>
                                 {%endif%}
                                 
                                 <p>Aceitamos: 

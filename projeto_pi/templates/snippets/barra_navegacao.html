@@ -44,11 +44,13 @@
                 </a>
             </li>
             {% endif %}
+            <!--
             <li class='nav-item px-1'>
                 <a class='nav-link text-light font-weight-bold' href='/ajuda'>
                     Ajuda
                 </a>
             </li>
+            -->
         </ul>
         
         <form class="d-inline my-2 my-lg-0 w-50" method='GET' action="{% url 'main:listar_empreendimentos' %}">
@@ -70,7 +72,7 @@
             <a class='btn btn-rounded btn-success' role='button' href='{% url "login"%}?next={{request.path}}'>
                 Entrar
             </a>
-            <a class='btn btn-rounded btn-warning' role='button' href='/register'>
+            <a class='btn btn-rounded btn-outline-warning' role='button' href='/register'>
                 Cadastre-se
             </a>
             

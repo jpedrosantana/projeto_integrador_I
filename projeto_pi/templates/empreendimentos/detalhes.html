@@ -32,7 +32,8 @@ Detalhes do Serviço
 
                                 {% if empreendimento.telefone %}
                                 <p><ion-icon name="call-outline"></ion-icon>
-                                {{empreendimento.telefone}}</p>
+                                <a href="https://wa.me/55{{empreendimento.telefone}}" target="_blank">{{empreendimento.telefone}}</a>
+                                </p>
                                 {%endif%}
                                 
                                 {% if empreendimento.instagram %}

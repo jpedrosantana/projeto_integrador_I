@@ -23,7 +23,9 @@
               <h3 class='mb-5'>Faça login para acessar a pagina.</h3>
             {% endif %}
           {% endif %}
-        
+          <meta name="google-signin-client_id" content="208878091883-subnkv6r7546obsplcjrdbenu7d1gegr.apps.googleusercontent.com">
+          <script src="https://apis.google.com/js/platform.js" async defer></script>
+      
           <form class='form' method="post" action="{% url 'login' %}">
             {% csrf_token %}
               <div class = "form-group md-6">
@@ -38,6 +40,14 @@
           </form>
           <br>
           <p class="text-left text-center">Não é cadastrado? Clique <a href="/register/">aqui</a>.</p>
+          <br>
+
+          <button type="button" class="btn btn-light">
+            <i class="fa fa-google"></i>
+            <a class="white" href="{% url 'social:begin' 'google-oauth2' %}">
+                Login com Google
+            </a>
+          </button>
         </div>
       </div>
     </div>

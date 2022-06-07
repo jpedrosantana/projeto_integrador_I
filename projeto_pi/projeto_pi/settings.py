@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
     'crispy_forms',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -66,6 +67,8 @@ TEMPLATES = [
                 'django.template.context_processors.request', #guarda a requisição no contexto, permitindo que o objeto de request seja acessado em qualquer lugar da aplicação
                 'django.contrib.auth.context_processors.auth', #guarda a variável user
                 'django.contrib.messages.context_processors.messages', #guarda uma variavel messages no contexto, gerenciando as mensagens dos usuários
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',                
             ],
         },
     },
@@ -173,3 +176,14 @@ LOGGING={
 LOGIN_REDIRECT_URL = "main:index"
 
 LOGOUT_REDIRECT_URL = "main:index"
+
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '208878091883-subnkv6r7546obsplcjrdbenu7d1gegr.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'

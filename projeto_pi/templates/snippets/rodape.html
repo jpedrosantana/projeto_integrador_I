@@ -82,11 +82,20 @@
   color: white;
   height: 0px;
 }
+#page-container {
+  position: relative;
+  height: 30vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
 footer {
     background-color: #007BFF;
     padding-top: 10px;
     padding-bottom: 0px;
-    position:fixed;
+    position:absolute;
     bottom:0;
     width:100%;
     vertical-align:text-top;
@@ -109,9 +118,13 @@ button {
 </style>
 
 <!-- Trigger/Open The Modal -->
-<footer>
+<div id="page-container">
+<div id='content-wrap'>
+  <footer>
 <center><button id="myBtn">Copyright <strong>&copy;</strong> e-vizinhos 2021 - Quem somos</button></center>
 </footer>
+</div>
+</div>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">

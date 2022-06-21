@@ -1,6 +1,6 @@
 {% extends "base.html"%}
 {% block conteudo %}
-
+<!--
 <div id="myCarousel" class="myCarousel" class="carousel slide" data-ride="carousel">
 
     <div class='carousel-inner'>
@@ -18,9 +18,20 @@
         </div>
     </div>
 </div>
+-->
+<div class = 'imagemCover container-fluid'>
+    <div class='row'>
+        <div class='home-msg col-md-6'>
+            <span class="font-weight-bold text-md-left h1">BEM VINDO! </span><br>
+            <span class="font-weight-bold text-md-left h2">
+                Somos um portal de serviços com o <br> objetivo de facilitar a comunicação<br> entre os clientes e fornecedores!</span>
+        </div>
+    </div>
+</div>
+
 
 <div class='container'>
-    <div class='row justify-content-md-center' style="margin-top: 3%;">
+    <div class='row' style="margin-top: 3%;"> <!-- justify-content-md-center-->
         <!--
         <div class="col-md-6">
             <h2 class='text-justify'>Bem vindo ao E-Vizinhos</h2>
@@ -34,21 +45,23 @@
             <img src="/static/img/home/home-padaria.jpg" class=' img-fluid rounded mb-3'>
         </div>
         -->
-        <div class='col-lg-6 text-center'>
+        <div class='col-md-6 text-center'>
+            <!--
             <p class="font-weight-bold h4">O que é o E-Vizinhos?</p class=>
             <p class="font-weight-light font-italic h5">Somos um portal de serviços com o objetivo de facilitar a comunicação entre os clientes e fornecedores!</p>
-            
-            <p class='mt-5'><ion-icon style="font-size: 64px;" name="create-outline"></ion-icon></p>
-            <p class="font-weight-bold h4">Como cadastrar meu produto ou serviço?</p>
-            <p class="font-weight-light font-italic h5">Registre-se na nossa plataforma e preencha o formulário de anúncio.</p>
-            <a class='btn btn-rounded btn-outline-info text-center' role='button' href='/register'>
+            -->
+            <p class="font-weight-bold h4", id="cabecalho_main">Como cadastrar meu produto ou serviço?</p>
+            <p class="font-weight-normal h5">Registre-se na nossa plataforma e preencha o <br>formulário de anúncio.</p>
+            <p><ion-icon style="font-size: 64px;" name="create-outline"></ion-icon></p>
+            <a class='btn btn-rounded btn-success text-center' role='button' href='/register'>
                 Registrar
             </a>
-
-            <p class="mt-5"><ion-icon style="font-size: 64px;" name="chatbubbles"></ion-icon></p>
-            <p class="font-weight-bold h4">Como entro em contato com os fornecedores?</p>
-            <p class="font-weight-light font-italic h5">Ao encontrar um produto ou serviço de seu interesse, você pode consultar as informações de contato para cada um deles.</p>
-            <a class='btn btn-rounded btn-outline-info text-center' role='button' href='/empreendimentos'>
+        </div>
+        <div class='col-md-6 text-center'>
+            <p class="font-weight-bold h4" id="cabecalho_main">Como entro em contato com os fornecedores?</p>
+            <p class="font-weight-normal h5">Ao encontrar um produto ou serviço de seu interesse, você pode consultar as informações de contato no anúncio.</p>
+            <p><ion-icon style="font-size: 64px;" name="chatbubbles"></ion-icon></p>
+            <a class='btn btn-rounded btn-success text-center' role='button' href='/empreendimentos'>
                 Anúncios
             </a>
         </div>
